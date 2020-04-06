@@ -64,13 +64,14 @@
             android:textColor="@color/colorPrimary" />
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:textSize="@dimen/dimen_common"
                 android:textColor="@color/blue_grey_primary_dark"
-                android:id="@+id/radioButtonmale"
+                android:id="@+id/radioButtonMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -79,7 +80,7 @@
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:textSize="@dimen/dimen_common"
                 android:textColor="@color/blue_grey_primary_dark"
-                android:id="@+id/radioButtonfemale"
+                android:id="@+id/radioButtonFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female" />
@@ -98,6 +99,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="in cm"
@@ -119,6 +121,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="in kg"
@@ -140,6 +143,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Your Location"
@@ -162,6 +166,7 @@
             android:paddingBottom="@dimen/dimen_common">
 
             <TextView
+                android:id="@+id/tv_startDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mon, Mar 29, 2020"
@@ -170,6 +175,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_startTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6.00 PM"
@@ -188,6 +194,7 @@
             android:paddingBottom="@dimen/dimen_common">
 
             <TextView
+                android:id="@+id/tv_endDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mon, Mar 29, 2020"
@@ -196,6 +203,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_endTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6.00 PM"
@@ -219,6 +227,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_patientInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Patient Info"
@@ -240,6 +249,7 @@
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ti_patientNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your Notes"
@@ -260,7 +270,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/textButton"
+                    android:id="@+id/btn_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cancel"
@@ -268,6 +278,7 @@
                     />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_order"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="55dp"
