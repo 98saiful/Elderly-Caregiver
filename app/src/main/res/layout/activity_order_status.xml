@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderStatusActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_common"
+            android:layout_marginTop="@dimen/dimen_common_small"
+            android:layout_marginEnd="@dimen/dimen_common"
+            android:layout_marginBottom="@dimen/dimen_common_small"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/dimen_common"
+            app:cardBackgroundColor="#90CAF9"
+            app:cardElevation="@dimen/dimen_common_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_patient_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginTop="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:text="Elderly Name"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_patient_name"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginTop="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:layout_marginBottom="@dimen/dimen_common"
+                    android:text="Location"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+                <TextView
+                    android:id="@+id/tv_session"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_location"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:layout_marginBottom="@dimen/dimen_common"
+                    android:text="Session"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caregiver"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="@dimen/dimen_common"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_common"
+            android:layout_marginTop="@dimen/dimen_common_small"
+            android:layout_marginEnd="@dimen/dimen_common"
+            android:layout_marginBottom="@dimen/dimen_common_small"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/dimen_common"
+            app:cardBackgroundColor="#90CAF9"
+            app:cardElevation="@dimen/dimen_common_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_caregiver_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginTop="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:text="Caregiver Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                <TextView
+                    android:id="@+id/tv_caregiver_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_caregiver_name"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginTop="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:layout_marginBottom="@dimen/dimen_common"
+                    android:text="Phone Number"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+                <TextView
+                    android:id="@+id/tv_caregiver_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_caregiver_phone"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:layout_marginBottom="@dimen/dimen_common"
+                    android:text="Email"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_chat"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/dimen_common_small"
+            android:layout_marginLeft="@dimen/dimen_common_small"
+            android:clickable="true"
+            android:layout_gravity="bottom"
+            android:text="chat"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/dimen_common_small"
+            android:layout_marginLeft="@dimen/dimen_common_small"
+            android:clickable="true"
+            android:layout_gravity="bottom"
+            android:text="rate"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
