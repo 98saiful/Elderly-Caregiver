@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:text="Details"
             android:textStyle="bold"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -77,6 +78,18 @@
                     android:textColor="@color/white"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
 
+                <TextView
+                    android:id="@+id/tv_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_session"
+                    android:layout_marginStart="@dimen/dimen_common"
+                    android:layout_marginEnd="@dimen/dimen_common"
+                    android:layout_marginBottom="@dimen/dimen_common"
+                    android:text="Test"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
             </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -87,7 +100,8 @@
             android:text="Caregiver"
             android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_marginTop="@dimen/dimen_common"/>
+            android:layout_marginTop="@dimen/dimen_common"
+            android:layout_marginStart="16dp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -144,41 +158,46 @@
                     android:textColor="@color/white"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_caregiver_email"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        app:icon="@drawable/ic_rate"
+                        android:text="rate"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/dimen_common_very_small"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        app:icon="@drawable/ic_chat"
+                        android:text="chat"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/dimen_common_small"
+                        />
+
+
+
+
+
+
+                </LinearLayout>
+
             </RelativeLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_chat"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:layout_marginRight="@dimen/dimen_common_small"
-            android:layout_marginLeft="@dimen/dimen_common_small"
-            android:clickable="true"
-            android:layout_gravity="bottom"
-            android:text="chat"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:layout_marginRight="@dimen/dimen_common_small"
-            android:layout_marginLeft="@dimen/dimen_common_small"
-            android:clickable="true"
-            android:layout_gravity="bottom"
-            android:text="rate"/>
-
-    </LinearLayout>
 
     </LinearLayout>
 
