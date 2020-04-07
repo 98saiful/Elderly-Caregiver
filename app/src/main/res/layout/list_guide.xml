@@ -36,7 +36,9 @@
             android:layout_marginTop="@dimen/dimen_common"
             android:layout_marginEnd="@dimen/dimen_common"
             android:text="@string/main_card_title"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="20sp"
+            android:fontFamily="@font/product_sans_regular"/>
 
         <TextView
             android:id="@+id/tv_card_1_subtitle"
@@ -47,9 +49,11 @@
             android:layout_marginTop="@dimen/dimen_common_small"
             android:layout_marginEnd="@dimen/dimen_common"
             android:layout_marginBottom="@dimen/dimen_common"
+            android:fontFamily="@font/product_sans_regular"
             android:text="@string/main_card_subtitle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="#727272"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+            android:textSize="15sp" />
 
 
     </RelativeLayout>

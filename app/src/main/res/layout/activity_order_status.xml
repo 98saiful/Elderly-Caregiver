@@ -18,10 +18,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="monospace"
             android:text="Details"
-            android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_marginStart="16dp"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -48,10 +49,11 @@
                     android:layout_marginStart="@dimen/dimen_common"
                     android:layout_marginTop="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Elderly Name"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_location"
@@ -62,9 +64,10 @@
                     android:layout_marginTop="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
                     android:layout_marginBottom="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Location"
-                    android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_session"
@@ -74,9 +77,10 @@
                     android:layout_marginStart="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
                     android:layout_marginBottom="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Session"
-                    android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_test"
@@ -86,9 +90,10 @@
                     android:layout_marginStart="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
                     android:layout_marginBottom="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Test"
-                    android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
@@ -97,11 +102,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caregiver"
-            android:textStyle="bold"
-            android:textSize="24sp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="@dimen/dimen_common"
-            android:layout_marginStart="16dp"/>
+            android:fontFamily="monospace"
+            android:text="Caregiver"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -128,10 +134,11 @@
                     android:layout_marginStart="@dimen/dimen_common"
                     android:layout_marginTop="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Caregiver Name"
-                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                     android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_caregiver_phone"
@@ -142,9 +149,10 @@
                     android:layout_marginTop="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
                     android:layout_marginBottom="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Phone Number"
-                    android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_caregiver_email"
@@ -154,9 +162,10 @@
                     android:layout_marginStart="@dimen/dimen_common"
                     android:layout_marginEnd="@dimen/dimen_common"
                     android:layout_marginBottom="@dimen/dimen_common"
+                    android:fontFamily="@font/product_sans_regular"
                     android:text="Email"
-                    android:textColor="@color/white"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -166,24 +175,24 @@
                     android:gravity="right">
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        app:icon="@drawable/ic_rate"
-                        android:text="rate"
                         android:layout_gravity="right"
                         android:layout_marginRight="@dimen/dimen_common_very_small"
-                        />
+                        android:fontFamily="@font/product_sans_regular"
+                        android:text="rate"
+                        app:icon="@drawable/ic_rate" />
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        app:icon="@drawable/ic_chat"
-                        android:text="chat"
                         android:layout_gravity="right"
                         android:layout_marginRight="@dimen/dimen_common_small"
-                        />
+                        android:fontFamily="@font/product_sans_regular"
+                        android:text="chat"
+                        app:icon="@drawable/ic_chat" />
 
 
 

@@ -22,9 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_common"
+            android:fontFamily="@font/product_sans_regular"
             android:text="Title"
-            android:textSize="32sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="32sp" />
 
         <TextView
             android:id="@+id/tv_guide_desc"
@@ -32,8 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_common"
             android:layout_marginRight="@dimen/dimen_common"
-            android:textSize="18sp"
-            android:text="Description"/>
+            android:fontFamily="@font/product_sans_regular"
+            android:text="Description"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
