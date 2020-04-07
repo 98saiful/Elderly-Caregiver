@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     List<Guide> guideList;
     RecyclerView recyclerView;
     ExtendedFloatingActionButton efab;
-    GuideAdapter adapter;
+//    GuideAdapter adapter;
 
 
     @Override
@@ -156,17 +156,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-//    @Override
-//    public void OnItemClick(int position) {
-//        Intent detailIntent = new Intent(this,GuideDetailActivity.class);
-//        Guide guide = guideList.get(position);
-//
-//        detailIntent.putExtra("Title", guide.getTitle());
-//        detailIntent.putExtra("Description", guide.getDescription());
-//        detailIntent.putExtra("Picture", guide.getPicture());
-//
-//        startActivity(detailIntent);
-//    }
 
 
 }
