@@ -16,6 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_regular"
             android:text="@string/name"
             android:textColor="@color/colorPrimary" />
 
@@ -29,6 +30,7 @@
                 android:id="@+id/ti_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_regular"
                 android:hint="Enter Your Name"
                 android:inputType="text"
                 android:maxLength="30"
@@ -38,6 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_regular"
             android:text="Age"
             android:textColor="@color/colorPrimary" />
 
@@ -51,6 +54,7 @@
                 android:id="@+id/ti_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_regular"
                 android:hint="Enter Your Age"
                 android:inputType="number"
                 android:maxLength="30"
@@ -60,6 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_regular"
             android:text="Gender"
             android:textColor="@color/colorPrimary" />
 
@@ -69,21 +74,23 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                android:textSize="@dimen/dimen_common"
-                android:textColor="@color/blue_grey_primary_dark"
                 android:id="@+id/radioButtonMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Male" />
+                android:fontFamily="@font/product_sans_regular"
+                android:text="Male"
+                android:textColor="@color/blue_grey_primary_dark"
+                android:textSize="@dimen/dimen_common" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                android:textSize="@dimen/dimen_common"
-                android:textColor="@color/blue_grey_primary_dark"
                 android:id="@+id/radioButtonFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female" />
+                android:fontFamily="@font/product_sans_regular"
+                android:text="Female"
+                android:textColor="@color/blue_grey_primary_dark"
+                android:textSize="@dimen/dimen_common" />
         </RadioGroup>
 
         <TextView
