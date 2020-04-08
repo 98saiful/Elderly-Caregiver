@@ -18,18 +18,17 @@
         />
 
 
-
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:text="Order"
-        android:layout_gravity="bottom|end"
-        app:srcCompat="@drawable/ic_add_black_24dp"
-        app:icon="@drawable/ic_add_black_24dp"
-        app:elevation="2dp"
-        android:id="@+id/fab"
+        android:textAllCaps="false"
         android:textSize="16sp"
-        />
+        app:elevation="2dp"
+        app:icon="@drawable/ic_add_black_24dp"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

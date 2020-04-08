@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     List<Guide> guideList;
     RecyclerView recyclerView;
     ExtendedFloatingActionButton efab;
-//    GuideAdapter adapter;
 
 
     @Override

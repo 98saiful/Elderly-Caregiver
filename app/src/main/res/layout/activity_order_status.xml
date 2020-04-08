@@ -181,9 +181,10 @@
                         android:layout_gravity="right"
                         android:layout_marginRight="@dimen/dimen_common_very_small"
                         android:fontFamily="@font/product_sans_regular"
-                        android:text="rate"
-                        app:icon="@drawable/ic_rate"
-                        android:textSize="16sp"/>
+                        android:text="Rate"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        app:icon="@drawable/ic_rate" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -192,9 +193,10 @@
                         android:layout_gravity="right"
                         android:layout_marginRight="@dimen/dimen_common_small"
                         android:fontFamily="@font/product_sans_regular"
-                        android:text="chat"
-                        app:icon="@drawable/ic_chat"
-                        android:textSize="16sp"/>
+                        android:text="Chat"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        app:icon="@drawable/ic_chat" />
 
 
 
