@@ -10,7 +10,6 @@
     android:focusable="true"
     app:cardCornerRadius="@dimen/dimen_common_small"
     app:cardUseCompatPadding="true"
-
     app:cardElevation="5dp"
     android:outlineAmbientShadowColor="@color/transparent"
     >

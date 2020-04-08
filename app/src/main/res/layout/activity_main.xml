@@ -13,8 +13,6 @@
         android:id="@+id/guide_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="@dimen/zero_margin_when_normal"
-        android:paddingEnd="@dimen/zero_margin_when_normal"
         android:layout_marginStart="@dimen/dimen_common_small"
         android:layout_marginEnd="@dimen/dimen_common_small"
         />

@@ -6,37 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".GuideDetailActivity">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:cardCornerRadius="@dimen/dimen_common_small"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        android:layout_marginStart="@dimen/dimen_common_small"
+        android:layout_marginEnd="@dimen/dimen_common_small">
 
-        <ImageView
-            android:id="@+id/iv_guide_img"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:transitionName="transition"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_common">
 
-        <TextView
-            android:id="@+id/tv_guide_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_common"
-            android:fontFamily="@font/product_sans_regular"
-            android:text="Title"
-            android:textColor="@color/black"
-            android:textSize="32sp" />
+            <ImageView
+                android:id="@+id/iv_guide_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:transitionName="transition"/>
 
-        <TextView
-            android:id="@+id/tv_guide_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_common"
-            android:layout_marginRight="@dimen/dimen_common"
-            android:fontFamily="@font/product_sans_regular"
-            android:text="Description"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tv_guide_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_common"
+                android:fontFamily="@font/product_sans_regular"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_guide_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_common"
+                android:layout_marginRight="@dimen/dimen_common"
+                android:fontFamily="@font/product_sans_regular"
+                android:text="Description"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.core.widget.NestedScrollView>
