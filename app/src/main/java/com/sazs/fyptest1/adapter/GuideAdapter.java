@@ -64,9 +64,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.GuideViewHol
                 intent.putExtra("Description", guide.getDescription());
                 intent.putExtra("Picture", guide.getPicture());
 
-//                holder.imageView.setTransitionName("transition");
-//                Pair<View,String> pair1 = Pair.create((View) holder.imageView, holder.imageView.getTransitionName());
-//                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((GuideAdapter) v, pair1, pair2);
                 v.getContext().startActivity(intent);
 
             }

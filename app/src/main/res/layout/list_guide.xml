@@ -26,7 +26,6 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/macbook"
-            android:transitionName="transition"
             />
 
         <TextView
