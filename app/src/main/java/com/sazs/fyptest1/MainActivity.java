@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         recyclerView = findViewById(R.id.guide_recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        
+
         guideList = new ArrayList<>();
 
         efab = findViewById(R.id.fab);
