@@ -33,7 +33,7 @@
             android:layout_marginBottom="@dimen/dimen_common_small"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="@dimen/dimen_common"
-            app:cardBackgroundColor="#90CAF9"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="@dimen/dimen_common_small">
 
             <RelativeLayout
@@ -118,7 +118,7 @@
             android:layout_marginBottom="@dimen/dimen_common_small"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="@dimen/dimen_common"
-            app:cardBackgroundColor="#90CAF9"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="@dimen/dimen_common_small">
 
             <RelativeLayout
