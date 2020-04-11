@@ -10,13 +10,31 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+
+import org.json.JSONObject;
+
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class OrderActivity extends AppCompatActivity {
 
-    Button btnCancel;
+    TextInputEditText tiName, tiAge, tiHeight, tiWeight, tiLocation, tiInfo, tiNote;
+    Button btnCancel, btnOrder;
     TextView tvStartDate, tvEndDate, tvStartTime, tvEndTime;
     DatePickerDialog.OnDateSetListener setListener;
+    RequestQueue requestQueue;
+    String insertURL = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/order.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +42,61 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        tiName = findViewById(R.id.ti_name);
+        tiAge = findViewById(R.id.ti_age);
+        tiHeight = findViewById(R.id.ti_height);
+        tiWeight = findViewById(R.id.ti_weight);
+        tiLocation = findViewById(R.id.ti_location);
+        tiInfo = findViewById(R.id.ti_patientInfo);
+        tiNote = findViewById(R.id.ti_patientNote);
+
         tvStartDate = findViewById(R.id.tv_startDate);
+
         btnCancel = findViewById(R.id.btn_cancel);
+        btnOrder = findViewById(R.id.btn_order);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cancelOrder();
+            }
+        });
+
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringRequest request = new StringRequest(Request.Method.POST, insertURL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        System.out.println(response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> parameters  = new HashMap<String, String>();
+                        parameters.put("elderly_name",tiName.getText().toString());
+                        parameters.put("elderly_age",tiAge.getText().toString());
+                        parameters.put("elderly_height",tiHeight.getText().toString());
+                        parameters.put("elderly_weight",tiWeight.getText().toString());
+                        parameters.put("elderly_location",tiLocation.getText().toString());
+                        parameters.put("elderly_info",tiInfo.getText().toString());
+                        parameters.put("elderly_note",tiNote.getText().toString());
+
+                        return parameters;
+                    }
+                };
+
+                requestQueue.add(request);
+
             }
         });
 
