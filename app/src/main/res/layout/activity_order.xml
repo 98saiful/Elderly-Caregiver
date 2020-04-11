@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radioButtonMale"
+                    android:id="@+id/rbMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
@@ -92,7 +92,7 @@
                     android:textSize="@dimen/dimen_common" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radioButtonFemale"
+                    android:id="@+id/rbFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_regular"

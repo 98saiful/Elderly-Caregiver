@@ -10,7 +10,10 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -32,6 +35,8 @@ import java.util.Map;
 public class OrderActivity extends AppCompatActivity {
 
     TextInputEditText tiName, tiAge, tiHeight, tiWeight, tiLocation, tiInfo, tiNote;
+    RadioGroup rgGender;
+    RadioButton rbMale, rbFemale, radioButton;
     Button btnCancel, btnOrder;
     TextView tvStartDate, tvEndDate, tvStartTime, tvEndTime;
     DatePickerDialog.OnDateSetListener setListener;
@@ -51,6 +56,9 @@ public class OrderActivity extends AppCompatActivity {
         tiLocation = findViewById(R.id.ti_location);
         tiInfo = findViewById(R.id.ti_patientInfo);
         tiNote = findViewById(R.id.ti_patientNote);
+        rbMale = findViewById(R.id.rbMale);
+        rbFemale = findViewById(R.id.rbFemale);
+        rgGender = findViewById(R.id.rg);
 
         tvStartDate = findViewById(R.id.tv_startDate);
 
@@ -115,6 +123,9 @@ public class OrderActivity extends AppCompatActivity {
                         parameters.put("elderly_location",tiLocation.getText().toString());
                         parameters.put("elderly_info",tiInfo.getText().toString());
                         parameters.put("elderly_note",tiNote.getText().toString());
+                        int radioId = rgGender.getCheckedRadioButtonId();
+                        radioButton = findViewById(radioId);
+                        parameters.put("elderly_gender", radioButton.getText().toString());
 
                         return parameters;
                     }
@@ -152,7 +163,6 @@ public class OrderActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month+1;
-//                        String date = day+"-"+month+"-"+year;
                         String date = year+"-"+month+"-"+day;
                         tvStartDate.setText(date);
                     }
