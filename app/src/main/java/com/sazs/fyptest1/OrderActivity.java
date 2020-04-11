@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -68,7 +69,30 @@ public class OrderActivity extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                StringRequest request = new StringRequest(Request.Method.POST, insertURL, new Response.Listener<String>() {
+
+                if (tiName.length()==0){
+                    tiName.setError("Enter Name");
+                }
+                else if (tiAge.length()==0){
+                    tiAge.setError("Enter Age");
+                }
+                else if (tiHeight.length()==0){
+                    tiHeight.setError("Enter Height");
+                }
+                else if (tiWeight.length()==0){
+                    tiWeight.setError("Enter Weight");
+                }
+                else if (tiLocation.length()==0){
+                    tiLocation.setError("Enter Location");
+                }
+                else if (tiInfo.length()==0){
+                    tiInfo.setError("Enter Info");
+                }
+                else if (tiNote.length()==0){
+                    tiNote.setError("Enter Note");
+                }
+                else {
+                    StringRequest request = new StringRequest(Request.Method.POST, insertURL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
@@ -98,7 +122,17 @@ public class OrderActivity extends AppCompatActivity {
 
                 requestQueue.add(request);
 
-                Snackbar.make(v, "Order Created", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(v, "Order Created", Snackbar.LENGTH_LONG)
+                    .setCallback(new Snackbar.Callback(){
+                        @Override
+                        public void onDismissed(Snackbar transientBottomBar, int event) {
+                            super.onDismissed(transientBottomBar, event);
+                            orderCreated();
+                        }
+                    }).show();
+//
+                }
+
             }
         });
 
@@ -129,6 +163,11 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void cancelOrder() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void orderCreated() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
