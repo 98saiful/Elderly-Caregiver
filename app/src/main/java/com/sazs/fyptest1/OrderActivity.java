@@ -3,6 +3,7 @@ package com.sazs.fyptest1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -66,7 +67,7 @@ public class OrderActivity extends AppCompatActivity {
 
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 StringRequest request = new StringRequest(Request.Method.POST, insertURL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -97,6 +98,7 @@ public class OrderActivity extends AppCompatActivity {
 
                 requestQueue.add(request);
 
+                Snackbar.make(v, "Order Created", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
