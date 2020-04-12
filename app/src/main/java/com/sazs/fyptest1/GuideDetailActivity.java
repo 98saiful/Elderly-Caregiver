@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.sazs.fyptest1.adapter.GuideAdapter;
 
 public class GuideDetailActivity extends AppCompatActivity {
 
