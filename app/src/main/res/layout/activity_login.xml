@@ -12,23 +12,36 @@
     android:paddingBottom="30dp"
     android:gravity="bottom">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="Welcome to"
-        android:gravity="center|bottom"
-        android:textColor="@color/blue_grey_primary_dark"
-        android:textSize="24sp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom">
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to"
+            android:gravity="center|bottom"
+            android:textColor="@color/blue_grey_primary_dark"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:text="Elderly Caregiver"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="32sp"
-        android:gravity="top|center"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elderly Caregiver"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="32sp"
+            android:gravity="top|center"/>
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
