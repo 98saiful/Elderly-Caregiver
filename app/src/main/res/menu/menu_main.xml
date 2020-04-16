@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_search"
-        android:orderInCategory="102"
+        android:orderInCategory="105"
         android:title="Search"
         android:icon="@drawable/ic_search_black_24dp"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
@@ -21,4 +21,11 @@
         android:orderInCategory="101"
         android:title="Order Status"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="102"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
 </menu>

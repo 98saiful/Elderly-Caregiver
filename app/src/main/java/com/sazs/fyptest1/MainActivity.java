@@ -20,12 +20,14 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.Response;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.sazs.fyptest1.adapter.GuideAdapter;
+import com.sazs.fyptest1.session.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
     List<Guide> guideList;
     RecyclerView recyclerView;
     ExtendedFloatingActionButton efab;
+    SessionManager sessionManager;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
 
         recyclerView = findViewById(R.id.guide_recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -89,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, OrderStatusActivity.class);
                 startActivity(intent2);
                 return true;
+            case R.id.logout:
+                sessionManager.logout();
         }
 
         return super.onOptionsItemSelected(item);

@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.sazs.fyptest1.session.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,11 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     private TextView tv_register;
     private static String URL_LOGIN = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/login.php";
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sessionManager = new SessionManager(this);
 
         email = findViewById(R.id.ti_email);
         password = findViewById(R.id.password);
@@ -82,8 +86,16 @@ public class LoginActivity extends AppCompatActivity {
                                     String name = object.getString("name").trim();
                                     String email = object.getString("email").trim();
 
-                                    Snackbar.make(getWindow().getDecorView().getRootView(), "Login Success", Snackbar.LENGTH_LONG)
-                                            .setAction("Action", null).show();
+                                    sessionManager.createSession(name, email);
+
+                                    Snackbar.make(getWindow().getDecorView().getRootView(), "Welcome "+name, Snackbar.LENGTH_LONG)
+                                            .setCallback(new Snackbar.Callback(){
+                                                @Override
+                                                public void onDismissed(Snackbar transientBottomBar, int event) {
+                                                    super.onDismissed(transientBottomBar, event);
+                                                    loginSuccess();
+                                                }
+                                            }).show();
                                 }
                             }
                         }catch (JSONException e){
@@ -114,5 +126,10 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    private void loginSuccess() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
