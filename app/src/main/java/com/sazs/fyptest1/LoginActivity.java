@@ -85,8 +85,9 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
                                     String name = object.getString("name").trim();
                                     String email = object.getString("email").trim();
+                                    String id = object.getString("id").trim();
 
-                                    sessionManager.createSession(name, email);
+                                    sessionManager.createSession(name, email, id);
 
                                     Snackbar.make(getWindow().getDecorView().getRootView(), "Welcome "+name, Snackbar.LENGTH_LONG)
                                             .setCallback(new Snackbar.Callback(){
