@@ -50,7 +50,7 @@
         app:errorEnabled="true">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ti_name"
+        android:id="@+id/reg_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/product_sans_regular"

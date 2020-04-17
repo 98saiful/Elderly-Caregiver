@@ -55,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.tvEmail);
 
         HashMap<String, String> user = sessionManager.getUserDetail();
-        getId = user.get(sessionManager.ID);
+        getId = user.get(SessionManager.ID);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,8 +64,6 @@ public class ProfileActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Edit your profile", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showSoftInput(name, InputMethodManager.SHOW_IMPLICIT);
@@ -85,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.i(TAG, response.toString());
+                        Log.i(TAG, response);
 
                         try {
                             JSONObject jsonObject = new JSONObject(response);
