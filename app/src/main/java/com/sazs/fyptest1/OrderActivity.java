@@ -38,12 +38,12 @@ public class OrderActivity extends AppCompatActivity {
     RadioGroup rgGender;
     RadioButton rbMale, rbFemale, radioButton;
     Button btnCancel, btnOrder;
-    TextView tvStartDate, tvEndDate, tvStartTime, tvEndTime, tempname;
+    TextView tvStartDate, tvEndDate, tvStartTime, tvEndTime, tempname, userID;
     DatePickerDialog.OnDateSetListener setListener;
     RequestQueue requestQueue;
     String insertURL = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/order.php";
     SessionManager sessionManager;
-    String getId;
+    String getId, getName;
     private static final String TAG = ProfileActivity.class.getSimpleName();
     private static final String URL_READ = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/read_order.php";
 
@@ -59,6 +59,7 @@ public class OrderActivity extends AppCompatActivity {
         HashMap<String, String> user = sessionManager.getUserDetail();
         getId = user.get(SessionManager.ID);
 
+        userID = findViewById(R.id.userid);
         tempname = findViewById(R.id.tempname);
         tiName = findViewById(R.id.ti_name);
         tiAge = findViewById(R.id.ti_age);
@@ -91,8 +92,6 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
 
-
-
                 if (tiName.length()==0){
                     tiName.setError("Enter Name");
                 }
@@ -119,7 +118,7 @@ public class OrderActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
 
-                            System.out.println(response.toString());
+                            System.out.println(response);
                         }
                     }, new Response.ErrorListener() {
                         @Override
@@ -143,6 +142,7 @@ public class OrderActivity extends AppCompatActivity {
                             radioButton = findViewById(radioId);
                             parameters.put("elderly_gender", radioButton.getText().toString());
                             parameters.put("user_name", tempname.getText().toString());
+                            parameters.put("user_id", userID.getText().toString());
 
                             return parameters;
                         }
@@ -215,8 +215,10 @@ public class OrderActivity extends AppCompatActivity {
                                 for (int i = 0; i < jsonArray.length(); i++){
                                     JSONObject object = jsonArray.getJSONObject(i);
                                     String strName = object.getString("name").trim();
+                                    Integer intId = object.getInt("id");
 
                                     tempname.setText(strName);
+                                    userID.setText((String.valueOf(intId)));
                                 }
                             }
                         }catch (JSONException e){
