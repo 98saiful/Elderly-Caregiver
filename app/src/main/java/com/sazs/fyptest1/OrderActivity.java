@@ -43,7 +43,7 @@ public class OrderActivity extends AppCompatActivity {
     RequestQueue requestQueue;
     String insertURL = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/order.php";
     SessionManager sessionManager;
-    String getId, getName;
+    String getId;
     private static final String TAG = ProfileActivity.class.getSimpleName();
     private static final String URL_READ = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/read_order.php";
 
@@ -131,7 +131,6 @@ public class OrderActivity extends AppCompatActivity {
                         protected Map<String, String> getParams() throws AuthFailureError {
                             Map<String,String> parameters  = new HashMap<String, String>();
                             parameters.put("elderly_name",tiName.getText().toString());
-                            System.out.println(tiName.getText());
                             parameters.put("elderly_age",tiAge.getText().toString());
                             parameters.put("elderly_height",tiHeight.getText().toString());
                             parameters.put("elderly_weight",tiWeight.getText().toString());
