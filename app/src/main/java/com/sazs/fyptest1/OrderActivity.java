@@ -34,12 +34,11 @@ import java.util.Map;
 
 public class OrderActivity extends AppCompatActivity {
 
-    TextInputEditText tiName, tiAge, tiHeight, tiWeight, tiLocation, tiInfo, tiNote;
+    TextInputEditText tiName, tiAge, tiHeight, tiWeight, tiLocation, tiInfo, tiNote, tiPhone;
     RadioGroup rgGender;
     RadioButton rbMale, rbFemale, radioButton;
     Button btnCancel, btnOrder;
-    TextView tvStartDate, tvEndDate, tvStartTime, tvEndTime, tempname, userID;
-    DatePickerDialog.OnDateSetListener setListener;
+    TextView tempname, userID;
     RequestQueue requestQueue;
     String insertURL = "http://lrgs.ftsm.ukm.my/users/a166118/FYP/order.php";
     SessionManager sessionManager;
@@ -63,6 +62,7 @@ public class OrderActivity extends AppCompatActivity {
         tempname = findViewById(R.id.tempname);
         tiName = findViewById(R.id.ti_name);
         tiAge = findViewById(R.id.ti_age);
+        tiPhone = findViewById(R.id.ti_phone);
         tiHeight = findViewById(R.id.ti_height);
         tiWeight = findViewById(R.id.ti_weight);
         tiLocation = findViewById(R.id.ti_location);
@@ -71,8 +71,6 @@ public class OrderActivity extends AppCompatActivity {
         rbMale = findViewById(R.id.rbMale);
         rbFemale = findViewById(R.id.rbFemale);
         rgGender = findViewById(R.id.rg);
-
-        tvStartDate = findViewById(R.id.tv_startDate);
 
         btnCancel = findViewById(R.id.btn_cancel);
         btnOrder = findViewById(R.id.btn_order);
@@ -132,6 +130,7 @@ public class OrderActivity extends AppCompatActivity {
                             Map<String,String> parameters  = new HashMap<String, String>();
                             parameters.put("elderly_name",tiName.getText().toString());
                             parameters.put("elderly_age",tiAge.getText().toString());
+                            parameters.put("elderly_phone",tiPhone.getText().toString());
                             parameters.put("elderly_height",tiHeight.getText().toString());
                             parameters.put("elderly_weight",tiWeight.getText().toString());
                             parameters.put("elderly_location",tiLocation.getText().toString());
@@ -163,29 +162,6 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
-
-        Calendar calendar = Calendar.getInstance();
-        final int year = calendar.get(Calendar.YEAR);
-        final int month = calendar.get(Calendar.MONTH);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-
-
-        tvStartDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        OrderActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-                        month = month+1;
-                        String date = year+"-"+month+"-"+day;
-                        tvStartDate.setText(date);
-                    }
-                },year,month,day);
-                datePickerDialog.show();
-            }
-        });
     }
 
     private void cancelOrder() {

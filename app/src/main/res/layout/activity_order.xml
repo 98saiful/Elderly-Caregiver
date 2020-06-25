@@ -73,6 +73,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/product_sans_regular"
+                android:text="Phone No"
+                android:textColor="@color/colorPrimary" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ti_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:hint="Enter Your Phone Number"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_regular"
                 android:text="Gender"
                 android:textColor="@color/colorPrimary" />
 
@@ -168,68 +192,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Session"
-            android:textColor="@color/colorPrimary" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/dimen_common"
-                android:paddingBottom="@dimen/dimen_common">
-
-                <TextView
-                    android:id="@+id/tv_startDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start Date"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_startTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start Time"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:clickable="true"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/dimen_common"
-                android:paddingBottom="@dimen/dimen_common">
-
-                <TextView
-                    android:id="@+id/tv_endDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="End Date"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_endTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="End Time"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:clickable="true"
-                    />
-
-            </LinearLayout>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Patient Info"
@@ -286,7 +248,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="invisible">
 
                         <TextView
                             android:layout_gravity="center"
@@ -305,7 +268,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="invisible">
 
                         <TextView
                             android:layout_marginLeft="5dp"
